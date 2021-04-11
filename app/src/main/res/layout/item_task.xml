@@ -21,7 +21,6 @@
         android:maxLines="1"
         android:layout_toStartOf="@id/label_priority"
         android:ellipsize="end"
-        android:textColor="@color/black"
         android:layout_alignTop="@id/checkbox_completed"
         android:layout_alignBottom="@id/checkbox_completed"
         android:layout_toEndOf="@+id/checkbox_completed"
