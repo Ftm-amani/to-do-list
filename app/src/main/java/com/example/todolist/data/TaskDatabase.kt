@@ -8,6 +8,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 import javax.inject.Provider
 import com.example.todolist.di.ApplicationScope
+import java.util.*
 
 @Database(entities = [Task::class] , version = 1 )
 abstract class TaskDatabase : RoomDatabase(){
@@ -25,16 +26,14 @@ abstract class TaskDatabase : RoomDatabase(){
 
             //db operations
             val dao = database.get().taskDao()
+            var defaultTaskEn = "add some tasks here"
+            var defaultTaskFa = "سلام"
+
 
             applicationScope.launch {
-                dao.insert(Task("wash the dishes"))
-                dao.insert(Task("do the laundry"))
-                dao.insert(Task("buy groceries", important = true))
-                dao.insert(Task("prepare food",completed = true))
-                dao.insert(Task("call mom"))
-                dao.insert(Task("visit grandma",completed =  true))
-                dao.insert(Task("repair bike"))
-                dao.insert(Task("call Elon Musk"))
+                dao.insert(Task(if(Locale.getDefault().language.equals("fa")){
+                    defaultTaskFa}
+                else defaultTaskEn, important = true))
             }
         }
     }

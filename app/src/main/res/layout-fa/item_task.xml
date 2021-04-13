@@ -21,6 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="example item"
+        android:textDirection="rtl"
         android:maxLines="1"
         android:layout_toStartOf="@id/label_priority"
         android:ellipsize="end"
@@ -36,5 +37,5 @@
         android:src="@drawable/ic_alert"
         android:layout_alignParentEnd="true"
         android:layout_centerInParent="true"
-    android:contentDescription="@string/important_task" />
+        android:contentDescription="@string/important_task" />
 </RelativeLayout>

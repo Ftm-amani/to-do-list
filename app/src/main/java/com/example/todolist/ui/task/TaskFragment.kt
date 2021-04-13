@@ -77,17 +77,17 @@ class TaskFragment : Fragment(R.layout.fragment_tasks), TasksAdapter.OnItemClick
             viewModel.tasksEvent.collect {
                 event -> when(event){
                     is TasksViewModel.TasksEvent.ShowUndoDeleteTaskMessage -> {
-                        Snackbar.make(view,"task deleted", Snackbar.LENGTH_LONG)
-                                .setAction("UNDO"){
+                        Snackbar.make(view,getString(R.string.snackbar_task_deleted), Snackbar.LENGTH_LONG)
+                                .setAction(getString(R.string.snackbar_undo)){
                                     viewModel.onUndoDeleteClick(event.task)
                                 }.show()
                     }
                 TasksViewModel.TasksEvent.NavigateToAddTaskScreen -> {
-                    val action = TaskFragmentDirections.actionTaskFragmentToAddEditTaskFragment(null,"New Task")
+                    val action = TaskFragmentDirections.actionTaskFragmentToAddEditTaskFragment(null,getString(R.string.new_task_label))
                     findNavController().navigate(action)
                 }
                 is TasksViewModel.TasksEvent.NavigateToEditTaskScreen -> {
-                    val action = TaskFragmentDirections.actionTaskFragmentToAddEditTaskFragment(event.task, "Edit Task")
+                    val action = TaskFragmentDirections.actionTaskFragmentToAddEditTaskFragment(event.task, getString(R.string.edit_task_label))
                     findNavController().navigate(action)
 
                 }
@@ -96,6 +96,14 @@ class TaskFragment : Fragment(R.layout.fragment_tasks), TasksAdapter.OnItemClick
                 }
                 TasksViewModel.TasksEvent.NavigateToDeleteAllCompletedScreen -> {
                     val action = TaskFragmentDirections.actionGlobalDeleteAllCompletedDialogFragment()
+                    findNavController().navigate(action)
+                }
+                TasksViewModel.TasksEvent.NavigateToDeleteAllScreen -> {
+                    val action = TaskFragmentDirections.actionGlobalDeleteAllDialogFragment()
+                    findNavController().navigate(action)
+                }
+                TasksViewModel.TasksEvent.NavigateToAboutUsScreen -> {
+                    val action = TaskFragmentDirections.actionTaskFragmentToAboutUsFragment()
                     findNavController().navigate(action)
                 }
             }.exhaustive
@@ -156,6 +164,15 @@ class TaskFragment : Fragment(R.layout.fragment_tasks), TasksAdapter.OnItemClick
 
                 R.id.action_delete_all_completed_tasks -> {
                     viewModel.onDeleteAllCompletedClick()
+                    true
+                }
+
+                R.id.action_delete_all_tasks -> {
+                    viewModel.onDeleteAllClick()
+                    true
+                }
+                R.id.action_about_us -> {
+                    viewModel.onNavigateToAboutUs()
                     true
                 }
                 else -> super.onOptionsItemSelected(item)

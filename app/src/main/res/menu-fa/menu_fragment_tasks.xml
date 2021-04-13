@@ -46,10 +46,8 @@
         android:title="@string/menu_delete_all_tasks"
         app:showAsAction="never"
         />
-
     <item
         android:id="@+id/action_about_us"
         android:title="@string/about_us"
         app:showAsAction="never"/>
-
 </menu>

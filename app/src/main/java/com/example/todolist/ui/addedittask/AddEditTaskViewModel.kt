@@ -12,10 +12,11 @@ import com.example.todolist.data.TaskDao
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
+import java.util.*
 
 class AddEditTaskViewModel @ViewModelInject constructor(
-    private val taskDao: TaskDao,
-    @Assisted private val state : SavedStateHandle)
+        private val taskDao: TaskDao,
+        @Assisted private val state : SavedStateHandle)
     :ViewModel() {
 
         val task = state.get<Task>("task")
@@ -37,7 +38,10 @@ class AddEditTaskViewModel @ViewModelInject constructor(
     fun onSaveClick(){
 
         if (taskName.isBlank()) {
-            showInvalidInputMessage("Name canot be empty")
+            if(Locale.getDefault().language.equals("fa"))
+            showInvalidInputMessage("برای کار خود یک نام انتخاب کنید")
+            else
+                showInvalidInputMessage("Name can not be empty")
             return
         }
 
