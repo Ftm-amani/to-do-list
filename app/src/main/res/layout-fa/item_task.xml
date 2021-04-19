@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="8dp"
@@ -11,31 +13,41 @@
         android:id="@+id/checkbox_completed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:buttonTint="@color/orange"
         android:minWidth="0dp"
         android:minHeight="0dp"
-        android:buttonTint="@color/orange"
-        android:layout_alignParentStart="true"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/text_view_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="example item"
-        android:textDirection="rtl"
-        android:maxLines="1"
-        android:layout_toStartOf="@id/label_priority"
-        android:ellipsize="end"
         android:layout_alignTop="@id/checkbox_completed"
         android:layout_alignBottom="@id/checkbox_completed"
+        android:layout_marginStart="8dp"
+        android:layout_toStartOf="@id/label_priority"
         android:layout_toEndOf="@+id/checkbox_completed"
-        android:gravity="center_vertical"/>
-    
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:maxLines="1"
+        android:textDirection="rtl"
+        app:layout_constraintBottom_toBottomOf="@+id/checkbox_completed"
+        app:layout_constraintStart_toEndOf="@+id/checkbox_completed"
+        app:layout_constraintTop_toTopOf="@+id/checkbox_completed"
+        tools:text="example item" />
+
     <ImageView
         android:id="@+id/label_priority"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_alert"
         android:layout_alignParentEnd="true"
         android:layout_centerInParent="true"
-        android:contentDescription="@string/important_task" />
-</RelativeLayout>
+        android:contentDescription="@string/important_task"
+        android:src="@drawable/ic_warn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

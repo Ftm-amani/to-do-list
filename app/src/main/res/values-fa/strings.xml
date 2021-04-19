@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ToDoList</string>
+    <string name="app_name">To Do List</string>
     <string name="task_name">کار</string>
     <string name="important_task">مهم</string>
     <string name="done">انجام شد</string>
@@ -24,13 +24,15 @@
     <string name="edit_task_label">ویرایش</string>
     <string name="created">ایجاد شده در : </string>
     <string name="about_us">درباره ی ما</string>
-    <string name="about_us_description">هدف ما تولید اپلیکیشن هایی در جهت رشد و توسعه فردیه. در اولین گام اپ (To Do List) در اختیار شما عزیزان قرار دادیم، امیدواریم که در پیشبرد اهداف روزانه کمکتون کنه</string>
-    <string name="version">Version 1.0</string>
+    <string name="about_us_description">هدف ما تولید اپلیکیشن هایی در جهت رشد و توسعه فردیه. در اولین گام اپ (To Do List) در اختیار شما عزیزان قرار دادیم، امیدواریم که در پیشبرد اهداف روزانه کمکتون کنه.</string>
+    <string name="version">Version 1.0.0 </string>
     <string name="about_us_label">درباره ی ما</string>
     <string name="about_app_title">درباره ی (To Do List)</string>
-    <string name="app_description">وقتی اهداف روزانه تون رو لیست میکنین ، علاوه بر اینکه بهتون یادآوری میکنه باید چیکار کنید، باعث میشه اولویت هاتون رو شناسایی کنید.و وقتی روزتون تموم میشه بتونید خودتون رو ارزیابی کنید..این اپ  ابزار خیلی خوبی برای اون دسته از افراد هست که: به برنامه‌ریزی کردن عادت ندارن و توی این زمینه تازه کار به حساب میان،و یا اون دسته که معمولاً کارهای مهم روزانشون رو تا دقیقه نود نگه می‌دارن و انجام نمی‌دن</string>
+    <string name="app_description">وقتی اهداف روزانه تون رو لیست میکنین ، علاوه بر اینکه بهتون یادآوری میکنه باید چیکار کنید، باعث میشه اولویت هاتون رو شناسایی کنید و وقتی روزتون تموم میشه بتونید خودتون رو ارزیابی کنید.\nاین اپ  ابزار خیلی خوبی برای اون دسته از افراد هست که:</string>
+    <string name="descrip_no_1">به برنامه‌ریزی کردن عادت ندارن و توی این زمینه تازه کار به حساب میان</string>
+    <string name="descrip_no_2">اون دسته که معمولاً کارهای مهم روزانشون رو تا دقیقه نود نگه می‌دارن و انجام نمی‌دن </string>
     <string name="about_us_title">درباره ی ما</string>
     <string name="contact_us_title">تماس با ما</string>
-    <string name="contact_us_description">اگر انتقاد یا پیشنهادی داشتین از طریق ایمیل زیر باهامون در ارتباط باشین</string>
+    <string name="contact_us_description">اگر انتقاد یا پیشنهادی داشتین از طریق ایمیل زیر باهامون در ارتباط باشین : </string>
     <string name="email">ftm.amani95@gmail.com</string>
 </resources>

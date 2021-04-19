@@ -26,9 +26,8 @@ abstract class TaskDatabase : RoomDatabase(){
 
             //db operations
             val dao = database.get().taskDao()
-            var defaultTaskEn = "add some tasks here"
-            var defaultTaskFa = "سلام"
-
+            val defaultTaskEn = "add some tasks here"
+            val defaultTaskFa = "کارها رو اینجا وارد کن"
 
             applicationScope.launch {
                 dao.insert(Task(if(Locale.getDefault().language.equals("fa")){

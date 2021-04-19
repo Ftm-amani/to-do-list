@@ -31,7 +31,6 @@
         android:id="@+id/action_hide_completed_tasks"
         android:title="@string/menu_hide_completed_tasks"
         android:checkable="true"
-        android:buttonTint="@color/orange"
         app:showAsAction="never"
         />
 

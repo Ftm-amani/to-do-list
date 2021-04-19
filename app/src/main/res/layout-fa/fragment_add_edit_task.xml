@@ -19,6 +19,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/task_name"
             tools:text="@string/task_name"
+            android:backgroundTint="@color/orange"
             android:inputType="text"
             android:autofillHints="@string/task_name" />
 
