@@ -35,4 +35,6 @@
     <string name="contact_us_title">تماس با ما</string>
     <string name="contact_us_description">اگر انتقاد یا پیشنهادی داشتین از طریق ایمیل زیر باهامون در ارتباط باشین : </string>
     <string name="email">ftm.amani95@gmail.com</string>
+    <string name="next">بعدی</string>
+    <string name="finish">پایان</string>
 </resources>

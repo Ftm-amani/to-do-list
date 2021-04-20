@@ -13,4 +13,6 @@
     <color name="yellow">#C2F9F09C</color>
     <color name="lilac">#ABCAB6EC</color>
     <color name="gray">#969696</color>
+    <color name="orange_low">#FF5722</color>
+    <color name="orange_loww">#B59381</color>
 </resources>
