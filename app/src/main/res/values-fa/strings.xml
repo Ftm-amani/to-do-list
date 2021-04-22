@@ -12,7 +12,7 @@
     <string name="menu_delete_all_completed_tasks">پاک کردن کار های انجام شده</string>
     <string name="menu_delete_all_tasks">پاک کردن تمام کارها</string>
     <string name="menu_dialog_delete_all_title">حذف همه</string>
-    <string name="menu_dialog_delete_all_msg">همه ی کارها را پاک بشه؟"</string>
+    <string name="menu_dialog_delete_all_msg">همه ی کارها را پاک بشه؟</string>
     <string name="menu_dialog_delete_all_cancel">خیر</string>
     <string name="menu_dialog_delete_all_yes">بله</string>
     <string name="menu_dialog_delete_all_completed_title">حذف انجام شده ها</string>
@@ -37,4 +37,8 @@
     <string name="email">ftm.amani95@gmail.com</string>
     <string name="next">بعدی</string>
     <string name="finish">پایان</string>
+    <string name="dialog_onboarding_title">دیدن آموزش</string>
+    <string name="dialog_onboarding_msg">میخوای آموزش رو ببینی؟</string>
+    <string name="dialog_onboarding_no">نه</string>
+    <string name="dialog_onboarding_yes">بله</string>
 </resources>

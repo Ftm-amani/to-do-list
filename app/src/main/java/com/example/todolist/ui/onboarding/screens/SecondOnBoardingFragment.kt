@@ -17,19 +17,18 @@ import kotlinx.android.synthetic.main.fragment_second_on_boarding.view.*
 
 class SecondOnBoardingFragment : Fragment() {
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         val view =  inflater.inflate(R.layout.fragment_second_on_boarding, container, false)
+
 
 //        val viewpager = activity?.findViewById<ViewPager2>(R.id.vp_onboarding)
 
         view.btn_finish.setOnClickListener{
         findNavController()
-            .navigate(OnBoardingFragmentDirections.actionOnBoardingFragmentToTaskFragment2())        }
+            .navigate(OnBoardingFragmentDirections.actionOnBoardingFragmentToTaskFragment())        }
         onBoardingFinished()
         return view
     }

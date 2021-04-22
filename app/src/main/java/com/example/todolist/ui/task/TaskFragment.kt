@@ -1,5 +1,6 @@
 package com.example.todolist.ui.task
 
+import android.content.Context
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
@@ -31,13 +32,18 @@ class TaskFragment : Fragment(R.layout.fragment_tasks), TasksAdapter.OnItemClick
     private val viewModel : TasksViewModel by viewModels()
 
     private lateinit var searchView : SearchView
+    val TAG = "onBoarding"
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        if (!onBoardingFinished()){
+                viewModel.onNavigateToOnBoardingScreen()}
+
         val binding = FragmentTasksBinding.bind(view)
 
         val taskAdapter = TasksAdapter(this)
+
 
         binding.apply {
             recyclerViewTasks.apply {
@@ -60,7 +66,6 @@ class TaskFragment : Fragment(R.layout.fragment_tasks), TasksAdapter.OnItemClick
 
             fabAddTasks.setOnClickListener {
                 viewModel.onAddNewTaskClick()
-
             }
         }
 
@@ -106,6 +111,10 @@ class TaskFragment : Fragment(R.layout.fragment_tasks), TasksAdapter.OnItemClick
                     val action = TaskFragmentDirections.actionTaskFragmentToAboutUsFragment()
                     findNavController().navigate(action)
                 }
+                TasksViewModel.TasksEvent.NavigateToOnBoardingScreen -> {
+                    val action = TaskFragmentDirections.actionGlobalOnBoardingDialogFragment()
+                    findNavController().navigate(action)
+                }
             }.exhaustive
             }
         }
@@ -113,7 +122,7 @@ class TaskFragment : Fragment(R.layout.fragment_tasks), TasksAdapter.OnItemClick
         setHasOptionsMenu(true)
     }
 
-    override fun OnItemClick(task: Task) {
+        override fun OnItemClick(task: Task) {
         viewModel.onTaskSelected(task)
     }
 
@@ -130,7 +139,6 @@ class TaskFragment : Fragment(R.layout.fragment_tasks), TasksAdapter.OnItemClick
         if(pendingQuery != null && pendingQuery.isNotEmpty()){
             searchItem.expandActionView()
             searchView.setQuery(pendingQuery,false)
-
         }
 
         searchView.onQueryTextChanged{
@@ -144,6 +152,13 @@ class TaskFragment : Fragment(R.layout.fragment_tasks), TasksAdapter.OnItemClick
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> {
+                activity?.onBackPressed()
+                return true
+            }
+        }
+
             return when(item.itemId){
                 R.id.action_sort_by_name -> {
                     viewModel.onSortOrderSelected(SortOrder.BY_NAME)
@@ -177,6 +192,10 @@ class TaskFragment : Fragment(R.layout.fragment_tasks), TasksAdapter.OnItemClick
                 }
                 else -> super.onOptionsItemSelected(item)
             }
+    }
+    private fun onBoardingFinished():Boolean {
+        val sharedPref = requireActivity().getSharedPreferences("onBoarding", Context.MODE_PRIVATE)
+        return sharedPref.getBoolean("finished", false)
     }
 
     override fun onDestroyView() {

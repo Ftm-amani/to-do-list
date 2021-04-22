@@ -96,6 +96,10 @@ class TasksViewModel @ViewModelInject constructor(
         tasksEventChannel.send(TasksEvent.NavigateToAboutUsScreen)
     }
 
+    fun onNavigateToOnBoardingScreen()= viewModelScope.launch {
+        tasksEventChannel.send(TasksEvent.NavigateToOnBoardingScreen)
+    }
+
 
     sealed class TasksEvent{
         object NavigateToAddTaskScreen : TasksEvent()
@@ -105,6 +109,7 @@ class TasksViewModel @ViewModelInject constructor(
         object NavigateToDeleteAllCompletedScreen : TasksEvent()
         object NavigateToDeleteAllScreen : TasksEvent()
         object NavigateToAboutUsScreen : TasksEvent()
+        object NavigateToOnBoardingScreen : TasksEvent()
     }
 
 

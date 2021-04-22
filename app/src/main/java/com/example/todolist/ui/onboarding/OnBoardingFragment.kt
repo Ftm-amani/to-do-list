@@ -15,7 +15,6 @@ class OnBoardingFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
         val view =  inflater.inflate(R.layout.fragment_on_boarding, container, false)
 
 
@@ -24,15 +23,19 @@ class OnBoardingFragment : Fragment() {
             SecondOnBoardingFragment()
         )
 
-        val adapter = ViewPagerAdapter(fragmentList,
+        val adapter = ViewPagerAdapter(
+            fragmentList,
             requireActivity().supportFragmentManager,
-            lifecycle)
+            lifecycle
+        )
+
 
         view.vp_onboarding.adapter = adapter
 
 
         return view
     }
+
 
     override fun onResume() {
         super.onResume()
@@ -44,4 +47,5 @@ class OnBoardingFragment : Fragment() {
         (activity as AppCompatActivity?)!!.supportActionBar!!.show()
 
     }
-}
+
+ }

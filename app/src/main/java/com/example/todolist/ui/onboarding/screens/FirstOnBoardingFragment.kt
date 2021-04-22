@@ -25,4 +25,5 @@ class FirstOnBoardingFragment : Fragment() {
         }
         return view
     }
+
 }

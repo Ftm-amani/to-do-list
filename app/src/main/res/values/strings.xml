@@ -36,7 +36,10 @@
     <string name="contact_us_description">if you have any suggestions, please let us know. You can send an email to the address below </string>
     <string name="email">ftm.amani95@gmail.com</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="next">Next</string>
     <string name="finish">Finish</string>
+    <string name="dialog_onboarding_title">go to tips</string>
+    <string name="dialog_onboarding_msg">Do you wanna see tips?</string>
+    <string name="dialog_onboarding_no">No</string>
+    <string name="dialog_onboarding_yes">Yes</string>
 </resources>
