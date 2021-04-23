@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_taskFragment_to_aboutUsFragment"
             app:destination="@id/aboutUsFragment" />
+        <action
+            android:id="@+id/action_taskFragment_to_onBoardingFragment"
+            app:destination="@id/onBoardingFragment" />
     </fragment>
 
     <fragment

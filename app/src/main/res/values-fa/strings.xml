@@ -41,4 +41,5 @@
     <string name="dialog_onboarding_msg">میخوای آموزش رو ببینی؟</string>
     <string name="dialog_onboarding_no">نه</string>
     <string name="dialog_onboarding_yes">بله</string>
+    <string name="help">راهنما</string>
 </resources>

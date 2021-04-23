@@ -38,7 +38,7 @@ class TaskFragment : Fragment(R.layout.fragment_tasks), TasksAdapter.OnItemClick
         super.onViewCreated(view, savedInstanceState)
 
         if (!onBoardingFinished()){
-                viewModel.onNavigateToOnBoardingScreen()}
+                viewModel.onNavigateDialogToOnBoardingScreen()}
 
         val binding = FragmentTasksBinding.bind(view)
 
@@ -111,8 +111,12 @@ class TaskFragment : Fragment(R.layout.fragment_tasks), TasksAdapter.OnItemClick
                     val action = TaskFragmentDirections.actionTaskFragmentToAboutUsFragment()
                     findNavController().navigate(action)
                 }
-                TasksViewModel.TasksEvent.NavigateToOnBoardingScreen -> {
+                TasksViewModel.TasksEvent.NavigateDialogToOnBoardingScreen -> {
                     val action = TaskFragmentDirections.actionGlobalOnBoardingDialogFragment()
+                    findNavController().navigate(action)
+                }
+                TasksViewModel.TasksEvent.NavigateToOnBoardingScreen -> {
+                    val action = TaskFragmentDirections.actionTaskFragmentToOnBoardingFragment()
                     findNavController().navigate(action)
                 }
             }.exhaustive
@@ -184,6 +188,10 @@ class TaskFragment : Fragment(R.layout.fragment_tasks), TasksAdapter.OnItemClick
 
                 R.id.action_delete_all_tasks -> {
                     viewModel.onDeleteAllClick()
+                    true
+                }
+                R.id.action_help -> {
+                    viewModel.onNavigateToOnBoardingScreen()
                     true
                 }
                 R.id.action_about_us -> {

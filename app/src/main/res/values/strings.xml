@@ -42,4 +42,5 @@
     <string name="dialog_onboarding_msg">Do you wanna see tips?</string>
     <string name="dialog_onboarding_no">No</string>
     <string name="dialog_onboarding_yes">Yes</string>
+    <string name="help">Help</string>
 </resources>
